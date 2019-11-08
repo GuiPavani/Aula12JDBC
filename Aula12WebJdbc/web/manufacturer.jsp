@@ -19,6 +19,7 @@
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Cidade / Estado</th>
                 <th>E-mail</th1>
             </tr>
             <% try{ %>
@@ -26,6 +27,7 @@
                 <tr>
                     <td><%= m.getId() %></td>
                     <td><%= m.getName() %></td>
+                    <td><%= m.getCidade()%> / <%= m.getEstado() %></td>
                     <td><%= m.getEmail() %></td>
                 </tr>
                 <% } %>

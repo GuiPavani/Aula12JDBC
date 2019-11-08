@@ -20,6 +20,8 @@ public class Manufacturer {
     private int id;
     private String name;
     private String email;
+    private String cidade;
+    private String estado;
     
     public static ArrayList<Manufacturer> getList() throws Exception{
         ArrayList<Manufacturer> list = new ArrayList();
@@ -29,13 +31,15 @@ public class Manufacturer {
         String password = "app";                
         Connection con = DriverManager.getConnection(url, user, password);
         Statement stmt = con.createStatement();
-        String sql = "SELECT MANUFACTURER_ID, NAME, EMAIL FROM APP.MANUFACTURER";
+        String sql = "SELECT MANUFACTURER_ID, NAME, CITY, STATE, EMAIL FROM APP.MANUFACTURER";
         ResultSet rs = stmt.executeQuery(sql);
         while(rs.next()){
             Manufacturer m = new Manufacturer(
                     rs.getInt("MANUFACTURER_ID"),
                     rs.getString("NAME"),
-                    rs.getString("EMAIL")
+                    rs.getString("EMAIL"),
+                    rs.getString("CITY"),
+                    rs.getString("STATE")
             );
             list.add(m);
         }
@@ -43,10 +47,12 @@ public class Manufacturer {
         return list;
     }
 
-    public Manufacturer(int id, String name, String email) {
+    public Manufacturer(int id, String name, String email, String cidade, String estado) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.cidade = cidade;
+        this.estado = estado;
     }
 
     public String getEmail() {
@@ -71,6 +77,22 @@ public class Manufacturer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
 }
