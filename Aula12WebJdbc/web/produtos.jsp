@@ -14,9 +14,11 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
+        <h2><a href="manufacturer.jsp">Fabricas</a></h2>
         <h1>Fabricante</h1>
         <table border ="1">
             <tr>    
+                <th>ID Fabrica</th>
                 <th>ID Produto</th>
                 <th>Codigo do Produto</th>
                 <th>Preco</th>
@@ -24,9 +26,11 @@
                 <th>Descricao</th1>
             </tr>
             <% try{ %>
-            <%for (Product p: Product.getList()) { %>
+            <%int id = Integer.parseInt(request.getParameter("id"));%>
+            <%for (Product p: Product.getList(id)) { %>
                 <tr>
-                    <td><%= p.getId() %></td>
+                    <td><%= p.getFabid()%></td>
+                    <td><%= p.getId()%></td>
                     <td><%= p.getCodigo() %></td>
                     <td><%= p.getPreco() %></td>
                     <td><%= p.getDisp() %></td>

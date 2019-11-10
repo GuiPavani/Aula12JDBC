@@ -14,6 +14,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
+        <h2><a href="index.jsp">Home</a></h2>
         <h1>Fabricantes</h1>
         <table border ="1">
             <tr>
@@ -25,8 +26,8 @@
             <% try{ %>
             <%for (Manufacturer m: Manufacturer.getList()) { %>
                 <tr>
-                    <%int i = m.getId();%>
-                    <td><a href="produtos.jsp?i=<%=i%>"><%= m.getId() %></a></td>
+                    <%int id = m.getId();%>
+                    <td><a href="produtos.jsp?id=<%=id%>"><%= m.getId() %></a></td>
                     <td><%= m.getName() %></td>
                     <td><%= m.getCidade()%> / <%= m.getEstado() %></td>
                     <td><%= m.getEmail() %></td>
