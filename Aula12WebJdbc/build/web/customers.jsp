@@ -15,6 +15,7 @@
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
         <h1>Clientes</h1>
+        <div align="center">
         <table border ="1">
             <tr>
                 <th>ID</th>
@@ -24,7 +25,8 @@
             <% try{ %>
                 <%for (Customer c: Customer.getList()) { %>
                 <tr>
-                    <td><%= c.getId() %></td>
+                    <%int id = c.getId(); %>
+                    <td><a href="purchase.jsp?id=<%=id%>"><%= c.getId() %></a></td>
                     <td><%= c.getName() %></td>
                     <td><%= c.getEmail() %></td>
                 </tr>
@@ -33,5 +35,6 @@
                 <tr><td colspan="3"> Erro: <%= e.getMessage() %> </td></tr>
                 <% } %>
         </table>
+        </div>
     </body>
 </html>
