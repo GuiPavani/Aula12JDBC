@@ -14,8 +14,9 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
-        <h1>Clientes</h1>
+        <h2><a href="index.jsp">Home</a></h2>
         <div align="center">
+        <h1>Clientes</h1>
         <table border ="1">
             <tr>
                 <th>ID</th>
@@ -36,5 +37,6 @@
                 <% } %>
         </table>
         </div>
+        <%@include file="WEB-INF/jspf/footnote.jspf"%>
     </body>
 </html>

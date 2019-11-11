@@ -37,5 +37,6 @@
                 <% } %>
         </table>
         </div>
+        <%@include file="WEB-INF/jspf/footnote.jspf"%>
     </body>
 </html>
