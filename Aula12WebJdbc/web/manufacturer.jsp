@@ -15,6 +15,7 @@
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
         <h2><a href="index.jsp">Home</a></h2>
+        <div align="center">
         <h1>Fabricantes</h1>
         <table border ="1">
             <tr>
@@ -37,5 +38,6 @@
                 <tr><td colspan="3"> Erro: <%= e.getMessage() %> </td></tr>
                 <% } %>
         </table>
+        </div>
     </body>
 </html>

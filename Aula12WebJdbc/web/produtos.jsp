@@ -14,8 +14,9 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
-        <h2><a href="manufacturer.jsp">Fabricas</a></h2>
-        <h1>Fabricante</h1>
+        <h2><a href="manufacturer.jsp">Voltar</a></h2>
+        <div align="center">
+        <h1>Produtos</h1>
         <table border ="1">
             <tr>    
                 <th>ID Fabrica</th>
@@ -41,5 +42,6 @@
                 <tr><td colspan="3"> Erro: <%= e.getMessage() %> </td></tr>
                 <% } %>
         </table>
+        </div>
     </body>
 </html>
