@@ -14,7 +14,7 @@
     </head>
     <body>
         <%@include file="WEB-INF/jspf/navbar.jspf"%>
-        <h2><a href="manufacturer.jsp">Voltar</a></h2>
+        <h2><a href="customers.jsp">Voltar</a></h2>
         <div align="center">
         <h1>Compras</h1>
         <table border ="1">
